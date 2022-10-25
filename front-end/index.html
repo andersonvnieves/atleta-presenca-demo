@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Atleta Presença - Demo</title>        
+    <link rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" 
+        crossorigin="anonymous">
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Atleta Presença Demo</a>
+              </div>
+          
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="index.html">Início <span class="sr-only">(current)</span></a></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Atleta <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="pages/inserir-atleta.html">Adicionar Novo</a></li>
+                      <li><a href="pages/listar-atletas.html">Listar</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Olá!</h1>
+            <p>Esta é uma demo de aplicação simples onde vamos cadastrar atletas e marcar presença nos treinos.</p>
+        </div>    
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Tecnologias utilizadas</div>
+            <div class="panel-body">
+              <article>
+                <h3>Front-end</h3>
+                <p>O front-end foi construído de forma simples, sem utilizar frameworks complexos de Javacript já que a 
+                    demo visa introduzir os conceitos mais básicos de HTML CSS e Javascript e de como a Web funciona.</p>
+              </article>
+
+              <article>
+                <h3>Back-end</h3>
+                <p>O back-end feito em Java utiliza o spring framework para lidar com requisições http mas a camada de acesso a dados utiliza JDBC direto, 
+                    novamente para introduzir menos conceitos complexos visando o entendimento básico de acesso a dados.</p>
+              </article>
+            </div>
+          </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+         crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        crossorigin="anonymous"></script>
+  </body>
+</html>
