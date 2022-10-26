@@ -1,24 +1,21 @@
-CREATE DATABASE [ATLETA_DB];
-GO
+CREATE DATABASE ATLETA_DB;
+USE ATLETA_DB;
 
-USE [ATLETA_DB];
-GO
-
-CREATE TABLE [ATLETA] (
-	ID INT IDENTITY PRIMARY KEY,
+CREATE TABLE ATLETA (
+	ID INT AUTO_INCREMENT PRIMARY KEY,
 	NOME_COMPLETO VARCHAR(100) NOT NULL,
 	DATA_NASCIMENTO DATE NOT NULL,
 	EMAIL VARCHAR(256) NOT NULL,
 	CELULAR VARCHAR(11) NOT NULL
 );
 
-CREATE TABLE [ESTADO] (
-	ID INT IDENTITY PRIMARY KEY,
+CREATE TABLE ESTADO (
+	ID INT AUTO_INCREMENT PRIMARY KEY,
 	SIGLA CHAR(2) NOT NULL,
 	ESTADO VARCHAR(25) NOT NULL
 );
-CREATE TABLE [ENDERECO] (
-	ID INT IDENTITY PRIMARY KEY,
+CREATE TABLE ENDERECO (
+	ID INT AUTO_INCREMENT PRIMARY KEY,
 	ESTADO_ID INT FOREIGN KEY REFERENCES [ESTADO]([ID]),
 	CIDADE VARCHAR(50) NOT NULL,
 	BAIRRO VARCHAR(50) NOT NULL,
@@ -35,28 +32,28 @@ ALTER TABLE [ATLETA]
 INSERT INTO [ESTADO] ([SIGLA],[ESTADO])
 VALUES ('AC', 'Acre'),
 ('AL', 'Alagoas'),
-('AP', 'Amapá'),
+('AP', 'Amapï¿½'),
 ('AM', 'Amazonas'),
 ('BA', 'Bahia'),
-('CE', 'Ceará'),
+('CE', 'Cearï¿½'),
 ('DF', 'Distrito Federal'),
-('ES', 'Espírito Santo'),
-('GO', 'Goiás'),
-('MA', 'Maranhão'),
+('ES', 'Espï¿½rito Santo'),
+('GO', 'Goiï¿½s'),
+('MA', 'Maranhï¿½o'),
 ('MT', 'Mato Grosso'),
 ('MS', 'Mato Grosso do Sul'),
 ('MG', 'Minas Gerais'),
-('PA', 'Pará'),
-('PB', 'Paraíba'),
-('PR', 'Paraná'),
+('PA', 'Parï¿½'),
+('PB', 'Paraï¿½ba'),
+('PR', 'Paranï¿½'),
 ('PE', 'Pernambuco'),
-('PI', 'Piauí'),
+('PI', 'Piauï¿½'),
 ('RJ', 'Rio de Janeiro'),
 ('RN', 'Rio Grande do Norte'),
 ('RS', 'Rio Grande do Sul'),
-('RO', 'Rondônia'),
+('RO', 'Rondï¿½nia'),
 ('RR', 'Roraima'),
 ('SC', 'Santa Catarina'),
-('SP', 'São Paulo'),
+('SP', 'Sï¿½o Paulo'),
 ('SE', 'Sergipe'),
 ('TO', 'Tocantins');
