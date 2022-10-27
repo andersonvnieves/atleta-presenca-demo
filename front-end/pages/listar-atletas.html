@@ -22,8 +22,6 @@
                 </button>
                 <a class="navbar-brand" href="../index.html">Atleta Presença Demo</a>
               </div>
-          
-              <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                   <li><a href="../index.html">Início <span class="sr-only">(current)</span></a></li>
@@ -54,44 +52,36 @@
                     <th>Celular</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Heitor Pedro Henrique Heitor Vieira</td>
-                    <td>27/03/1952</td>
-                    <td>heitor_vieira@tokiomarine.com.br</td>
-                    <td>(82) 99712-8248</td>
-                </tr>
-                <tr>
-                    <td>Bruno Cláudio Freitas</td>
-                    <td>09/03/1954</td>
-                    <td>brunoclaudiofreitas@gmindustria.com.br</td>
-                    <td>(11) 98888-8888</td>
-                </tr>
-                <tr>
-                    <td>Luana Betina Evelyn Castro</td>
-                    <td>10/03/1997</td>
-                    <td>luana-castro81@zuinzuin.com.br</td>
-                    <td>(11) 98888-8888</td>
-                </tr>             
-                <tr>
-                    <td>Cauê Nathan Carlos</td>
-                    <td>29/03/1993</td>
-                    <td>caue-dasneves96@argosmineracao.com.br</td>
-                    <td>(11) 98888-8888</td>
-                </tr>
-                <tr>
-                    <td>Henry Caio Thomas</td>
-                    <td>21/07/1983</td>
-                    <td>henry.caio.rocha@mrv.com.br</td>
-                    <td>(11) 98888-8888</td>
-                </tr>
+            <tbody id="table-atletas-body">
             </tbody>
         </table>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
-         crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
-        crossorigin="anonymous"></script>
+      crossorigin="anonymous"></script>
+	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+      crossorigin="anonymous"></script>
+    <script>
+      $.get('http://localhost:8080/atleta/list', (atletas)=> {
+        var conteudoTabela = '';
+        atletas.forEach(atleta => {
+          conteudoTabela += `<tr>
+              <td>` + atleta.nomeCompleto + `</td>
+              <td>` + formatarData(atleta.dataNascimento) + `</td>
+              <td>` + atleta.email + `</td>
+              <td>` + formatarCelular(atleta.celular) + `</td>
+            </tr>`;
+        });
+        $('#table-atletas-body').html(conteudoTabela);
+      });
+
+      function formatarData(entrada) {
+        return `${entrada.substring(8)}/${entrada.substring(5,7)}/${entrada.substring(0,4)}`
+      }
+
+      function formatarCelular(entrada) {
+        return `(${entrada.substring(0,2)}) ${entrada.substring(2,7)}-${entrada.substring(7)}`
+      }
+    </script>
   </body>
 </html>

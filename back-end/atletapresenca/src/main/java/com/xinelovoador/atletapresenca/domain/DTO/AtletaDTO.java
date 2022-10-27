@@ -1,21 +1,13 @@
-package com.xinelovoador.atletapresenca.domain;
+package com.xinelovoador.atletapresenca.domain.DTO;
 
 import java.util.Date;
 
-public class Atleta {
-    private int id;
+public class AtletaDTO {
     private String nomeCompleto;
-    private Date dataNasciento;
+    private String dataNascimento;
     private String email;
     private String celular;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getNomeCompleto() {
         return nomeCompleto;
@@ -25,12 +17,12 @@ public class Atleta {
         this.nomeCompleto = nomeCompleto;
     }
 
-    public Date getDataNasciento() {
-        return dataNasciento;
+    public String getDataNascimento() {
+        return dataNascimento;
     }
 
-    public void setDataNasciento(Date dataNasciento) {
-        this.dataNasciento = dataNasciento;
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
     public String getEmail() {
